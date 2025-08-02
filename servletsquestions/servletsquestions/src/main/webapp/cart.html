@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h2>Select Item to Add to Cart</h2>
+    <form action="addToCart" method="post">
+        <select name="item">
+            <option value="Laptop">Laptop</option>
+            <option value="Mouse">Mouse</option>
+            <option value="Keyboard">Keyboard</option>
+            <option value="Monitor">Monitor</option>
+        </select><br><br>
+        <input type="submit" value="Add to Cart">
+    </form>
+
+    <br>
+    <form action="viewCart" method="get">
+        <input type="submit" value="View Cart">
+    </form>
+</body>
+</html>
