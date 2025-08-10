@@ -1,0 +1,4 @@
+com/consumer/restaurantconsumer/model/Restaurant.class
+com/consumer/restaurantconsumer/RestaurantConsumerApplication.class
+com/consumer/restaurantconsumer/client/RestaurantClient.class
+com/consumer/restaurantconsumer/controller/ConsumerController.class
