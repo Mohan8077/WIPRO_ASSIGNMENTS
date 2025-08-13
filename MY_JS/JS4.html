@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Customers – Dynamic Array Manipulation</title>
+</head>
+<body>
+    <h2>Sample Output</h2>
+    <pre id="output"></pre> <!-- Preserve formatting -->
+
+    <script>
+        let out = ""; // Stores all output text
+
+        // Step 1: Ask how many customers to register
+        let numCustomers = parseInt(prompt("Enter number of customers to register:"));
+
+        // Step 2: Store customer names in an array
+        let customers = [];
+        for (let i = 0; i < numCustomers; i++) {
+            let name = prompt(`Enter name of customer ${i + 1}:`);
+            customers.push(name);
+        }
+
+        out += "Original Customers: " + customers.join(", ") + "\n";
+
+        // Step 3: Display customer names using for...of
+        out += "Customers using for...of:\n";
+        for (let name of customers) {
+            out += name + "\n";
+        }
+
+        // Step 4: Display customer IDs using for...in
+        out += "\nCustomer IDs using for...in:\n";
+        for (let index in customers) {
+            out += index + "\n";
+        }
+
+        // Step 5: Add a new customer
+        customers.push("Anita");
+        out += "\nAfter push('Anita'): " + customers.join(", ") + "\n";
+
+        // Step 6: Remove the last customer
+        customers.pop();
+        out += "After pop(): " + customers.join(", ") + "\n";
+
+        // Step 7: Insert a new customer at position 1
+        customers.splice(1, 0, "Vikram");
+        out += "After insert 'Vikram' at position 1: " + customers.join(", ") + "\n";
+
+        // Step 8: Delete a customer at position 2
+        customers.splice(2, 1);
+        out += "After delete at position 2: " + customers.join(", ") + "\n";
+
+        // Step 9: Display final customers
+        out += "Final Customers: " + customers.join(", ");
+
+        // Show on page
+        document.getElementById("output").textContent = out;
+    </script>
+</body>
+</html>

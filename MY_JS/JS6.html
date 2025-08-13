@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tour Booking</title>
+</head>
+<body>
+    <h2>Tour Booking Summary</h2>
+    <pre id="output"></pre>
+
+    <script>
+        let out = "";
+
+        // Prompt user for booking details
+        let fullName = prompt("Enter your Full Name:");
+        let email = prompt("Enter your Email:");
+        let destination = prompt("Enter Destination (Ooty/Goa/Manali):");
+        let days = parseInt(prompt("Enter Number of Days:"));
+        let travelers = parseInt(prompt("Enter Number of Travelers:"));
+
+        // Price per day per person
+        let pricePerDay;
+        if (destination.toLowerCase() === "ooty") {
+            pricePerDay = 2000;
+        } else if (destination.toLowerCase() === "goa") {
+            pricePerDay = 3000;
+        } else if (destination.toLowerCase() === "manali") {
+            pricePerDay = 4000;
+        } else {
+            out = "Invalid destination entered!";
+            document.getElementById("output").textContent = out;
+            throw new Error("Invalid destination");
+        }
+
+        // Calculate total cost
+        let totalCost = days * travelers * pricePerDay;
+
+        // Display booking summary
+        out += "Booking Summary:\n";
+        out += `Name: ${fullName}\n`;
+        out += `Email: ${email}\n`;
+        out += `Destination: ${destination}\n`;
+        out += `Number of Days: ${days}\n`;
+        out += `Number of Travelers: ${travelers}\n`;
+        out += `Price per Day per Person: ₹${pricePerDay}\n`;
+        out += `Total Cost: ₹${totalCost}`;
+
+        // Show result on page
+        document.getElementById("output").textContent = out;
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equality & Inequality Checker</title>
+</head>
+<body>
+    <h2>Equality & Inequality Checker</h2>
+
+    <script>
+        // Taking inputs as strings
+        let val1 = prompt("Enter first value:");
+        let val2 = prompt("Enter second value:");
+
+        // Show data types before conversion
+        document.write("<h3>Original Values</h3>");
+        document.write(`Value 1: "${val1}" (Type: ${typeof val1})<br>`);
+        document.write(`Value 2: "${val2}" (Type: ${typeof val2})<br><br>`);
+
+        // Convert to numbers
+        let num1 = Number(val1);
+        let num2 = Number(val2);
+
+        document.write("<h3>After Number Conversion</h3>");
+        document.write(`Value 1: ${num1} (Type: ${typeof num1})<br>`);
+        document.write(`Value 2: ${num2} (Type: ${typeof num2})<br><br>`);
+
+        // Comparisons
+        document.write("<h3>Comparison Results</h3>");
+
+        // Equality (==)
+        document.write(`== : ${val1 == val2} → Compares values after type conversion.<br>`);
+
+        // Strict Equality (===)
+        document.write(`=== : ${val1 === val2} → Compares values & types without conversion.<br>`);
+
+        // Inequality (!=)
+        document.write(`!= : ${val1 != val2} → Checks if values are not equal after conversion.<br>`);
+
+        // Strict Inequality (!==)
+        document.write(`!== : ${val1 !== val2} → Checks if values or types are different.<br>`);
+    </script>
+</body>
+</html>

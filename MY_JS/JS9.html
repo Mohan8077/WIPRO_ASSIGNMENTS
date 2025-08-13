@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Tax Calculator (Multiple Callbacks)</title>
+</head>
+<body>
+    <h2>Income Tax Calculator (Multiple Callbacks)</h2>
+    <div id="output"></div>
+
+    <script>
+        let taxRecords = []; // JSON array for storing records
+
+        // Callback 1 - Log to console
+        function logToConsole(details) {
+            console.log("Tax Calculation Result:", details);
+        }
+
+        // Callback 2 - Display on page
+        function displayOnPage(details) {
+            document.getElementById("output").innerHTML = `
+                <p><b>Name:</b> ${details.name}</p>
+                <p><b>PAN:</b> ${details.pan}</p>
+                <p><b>Annual Income:</b> ₹ ${details.income}</p>
+                <p><b>Calculated Tax:</b> ₹ ${details.tax}</p>
+            `;
+        }
+
+        // Callback 3 - Save to records
+        function saveToRecords(details) {
+            taxRecords.push(details);
+            console.log("Current Tax Records:", taxRecords);
+        }
+
+        // Tax calculation function
+        function calculateTax(name, pan, income, callback) {
+            let tax = 0;
+            // Simple slab method
+            if (income <= 250000) {
+                tax = 0;
+            } else if (income <= 500000) {
+                tax = (income - 250000) * 0.05;
+            } else if (income <= 1000000) {
+                tax = (250000 * 0.05) + (income - 500000) * 0.2;
+            } else {
+                tax = (250000 * 0.05) + (500000 * 0.2) + (income - 1000000) * 0.3;
+            }
+
+            let details = {
+                name: name,
+                pan: pan,
+                income: income,
+                tax: tax
+            };
+
+            callback(details);
+        }
+
+        // Get inputs from prompt
+        let userName = prompt("Enter your Name:");
+        let userPAN = prompt("Enter your PAN:");
+        let userIncome = parseFloat(prompt("Enter your Annual Income:"));
+
+        // Call the function with multiple callbacks inside
+        calculateTax(userName, userPAN, userIncome, function(details) {
+            logToConsole(details);
+            displayOnPage(details);
+            saveToRecords(details);
+        });
+    </script>
+</body>
+</html>

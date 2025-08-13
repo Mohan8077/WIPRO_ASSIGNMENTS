@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports Team Player Details</title>
+</head>
+<body>
+    <h2>Sports Team Player Details</h2>
+    <pre id="output"></pre>
+
+    <script>
+        let out = "";
+
+        // Function to get player details using prompt
+        function getPlayerDetails(playerNumber) {
+            let name = prompt(`Enter name of player ${playerNumber}:`);
+            let age = parseInt(prompt(`Enter age of ${name}:`));
+            let sport = prompt(`Enter sport of ${name}:`);
+            let matches = parseInt(prompt(`Enter matches played by ${name}:`));
+            let runs = parseInt(prompt(`Enter runs scored by ${name}:`));
+            let average = parseFloat(prompt(`Enter batting average of ${name}:`));
+
+            return {
+                name,
+                age,
+                sport,
+                stats: { matches, runs, average }
+            };
+        }
+
+        // Get details for two players
+        const player1 = getPlayerDetails(1);
+        const player2 = getPlayerDetails(2);
+
+        // Store players in an array
+        const players = [player1, player2];
+
+        // Destructure both players from the array
+        const [p1, p2] = players;
+
+        // Destructure properties from player1
+        let { name: name1, sport: sport1, stats: { matches: matches1, runs: runs1, average: avg1 } } = p1;
+
+        // Destructure properties from player2
+        let { name: name2, sport: sport2, stats: { matches: matches2, runs: runs2, average: avg2 } } = p2;
+
+        // Print details for player1
+        out += `Player ${name1} plays ${sport1}.\n`;
+        out += `Matches: ${matches1} | Runs: ${runs1} | Batting Average: ${avg1}\n\n`;
+
+        // Print details for player2
+        out += `Player ${name2} plays ${sport2}.\n`;
+        out += `Matches: ${matches2} | Runs: ${runs2} | Batting Average: ${avg2}`;
+
+        // Display on page
+        document.getElementById("output").textContent = out;
+    </script>
+</body>
+</html>

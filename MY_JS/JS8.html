@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Switchboard Control</title>
+</head>
+<body>
+    <h2>Switchboard Simulation</h2>
+    <pre id="output"></pre>
+
+    <script>
+        let out = "";
+
+        // 1. Building name as const
+        const buildingName = prompt("Enter building name:");
+
+        // 2. Prompt number of devices
+        let numDevices = parseInt(prompt("Enter number of devices:"));
+
+        // 3. Get device names
+        let devices = [];
+        for (let i = 0; i < numDevices; i++) {
+            devices.push(prompt(`Enter name of device ${i + 1}:`));
+        }
+
+        // Status starts ON for first device
+        let status = "ON";
+
+        // 4. Loop with var
+        for (var i = 0; i < devices.length; i++) {
+            out += `Checking Switch ${i + 1}: ${devices[i]} is ${status}\n`;
+            // Toggle for next device
+            status = (status === "ON") ? "OFF" : "ON";
+        }
+
+        // Final message
+        out += `All switches checked for ${buildingName}.\n`;
+
+        // Show var counter after loop
+        out += `Outside loop: var counter is ${i}\n`;
+
+        // Show output in page
+        document.getElementById("output").textContent = out;
+
+        // 6. Trigger const reassignment error
+        try {
+            buildingName = "New Building"; // Will throw an error
+        } catch (error) {
+            console.error("Error: Cannot reassign a const variable -", error.message);
+        }
+    </script>
+</body>
+</html>

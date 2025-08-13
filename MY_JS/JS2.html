@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Tax Calculator</title>
+</head>
+<body>
+    <h2>Income Tax Calculator</h2>
+
+    <script>
+        // Taking inputs
+        let fullName = prompt("Enter your full name:");
+        let panNumber = prompt("Enter your PAN number (10 characters, uppercase):");
+        let dobInput = prompt("Enter your Date of Birth (YYYY-MM-DD):");
+        let annualIncome = parseFloat(prompt("Enter your Annual Income:"));
+
+        // PAN validation
+        panNumber = panNumber.trim();
+        if (panNumber.length !== 10 || panNumber !== panNumber.toUpperCase()) {
+            alert("Invalid PAN format! Must be 10 uppercase characters.");
+        } else {
+            // Calculate age
+            let dob = new Date(dobInput);
+            let today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            let monthDiff = today.getMonth() - dob.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+
+            // Tax calculation
+            let tax = 0;
+            if (annualIncome <= 250000) {
+                tax = 0;
+            } else if (annualIncome <= 500000) {
+                tax = 0.05 * annualIncome;
+            } else if (annualIncome <= 1000000) {
+                tax = 0.20 * annualIncome;
+            } else {
+                tax = 0.30 * annualIncome;
+            }
+
+            // Rounding tax
+            tax = Math.round(tax);
+
+            // Display Output
+            document.write("<h3>Income Tax Details</h3>");
+            document.write("Full Name: " + fullName + "<br>");
+            document.write("PAN Number: " + panNumber + "<br>");
+            document.write("Age: " + age + "<br>");
+            document.write("Annual Income: ₹" + annualIncome.toLocaleString() + "<br>");
+            document.write("Tax Payable: ₹" + tax.toLocaleString() + "<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Store Management</title>
+</head>
+<body>
+    <h2>Sample Output</h2>
+    <pre id="output"></pre>
+
+    <script>
+        let out = "";
+
+        // 1. Ask how many books to register
+        let numBooks = parseInt(prompt("Enter number of books:"));
+
+        // Create an empty books array
+        let books = [];
+
+        // 2. Prompt user to enter each book's details
+        for (let i = 0; i < numBooks; i++) {
+            let title = prompt(`Enter title of book ${i + 1}:`);
+            let author = prompt(`Enter author of book ${i + 1}:`);
+            let price = parseFloat(prompt(`Enter price of book ${i + 1}:`));
+            let available = prompt(`Is book ${i + 1} available? (yes/no):`).toLowerCase() === "yes";
+
+            books.push({ title, author, price, available });
+        }
+
+        // Display all books
+        out += "All Books:\n";
+        for (let book of books) {
+            out += `Title: ${book.title}, Author: ${book.author}, Price: ₹${book.price}, Available: ${book.available}\n`;
+        }
+
+        // Display only available books
+        out += "\nAvailable Books:\n";
+        for (let book of books) {
+            if (book.available) {
+                out += `Title: ${book.title}, Author: ${book.author}, Price: ₹${book.price}\n`;
+            }
+        }
+
+        // Add a new book
+        let newTitle = prompt("Enter title of new book to add:");
+        let newAuthor = prompt(`Enter author of "${newTitle}":`);
+        let newPrice = parseFloat(prompt(`Enter price of "${newTitle}":`));
+        let newAvailable = prompt(`Is "${newTitle}" available? (yes/no):`).toLowerCase() === "yes";
+
+        books.push({ title: newTitle, author: newAuthor, price: newPrice, available: newAvailable });
+        out += "\nAfter Adding:\n\n" + books.map(b => b.title).join(", ") + "\n";
+
+        // Update the price of a specific book
+        let updateTitle = prompt("Enter the title of the book to update price:");
+        let updatedPrice = parseFloat(prompt(`Enter new price for "${updateTitle}":`));
+
+        for (let book of books) {
+            if (book.title.toLowerCase() === updateTitle.toLowerCase()) {
+                book.price = updatedPrice;
+                out += `\nAfter Price Update:\n${book.title} - ₹${book.price}\n`;
+                break;
+            }
+        }
+
+        // Delete a book
+        let deleteTitle = prompt("Enter the title of the book to delete:");
+        books = books.filter(b => b.title.toLowerCase() !== deleteTitle.toLowerCase());
+        out += "\nAfter Deletion:\n" + books.map(b => b.title).join(", ");
+
+        // Display output on page
+        document.getElementById("output").textContent = out;
+    </script>
+</body>
+</html>
