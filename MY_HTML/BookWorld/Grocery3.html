@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Grocery Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8fa;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        legend {
+            font-weight: bold;
+            color: #444;
+        }
+        label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: auto;
+            margin-right: 6px;
+        }
+        .form-buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            background: #f44336;
+        }
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+        input[type="reset"]:hover {
+            background: #d73833;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Online Grocery Order</h2>
+
+<form action="order.php" method="POST">
+    <!-- Customer Details -->
+    <fieldset>
+        <legend>Customer Details</legend>
+
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autofocus>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="10-digit number" required>
+
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
+    </fieldset>
+
+    <!-- Order Details -->
+    <fieldset>
+        <legend>Order Details</legend>
+
+        <label>Grocery Items:</label>
+        <input type="checkbox" name="items[]" value="Rice">Rice
+        <input type="checkbox" name="items[]" value="Milk">Milk
+        <input type="checkbox" name="items[]" value="Bread">Bread
+        <input type="checkbox" name="items[]" value="Eggs">Eggs
+        <input type="checkbox" name="items[]" value="Sugar">Sugar
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+
+        <label for="date">Delivery Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Preferred Delivery Time:</label>
+        <input type="time" id="time" name="time">
+
+        <label>Payment Method:</label>
+        <input type="radio" name="payment" value="COD" required>Cash on Delivery
+        <input type="radio" name="payment" value="UPI">UPI
+        <input type="radio" name="payment" value="Card">Card
+    </fieldset>
+
+    <!-- Special Instructions -->
+    <fieldset>
+        <legend>Special Instructions</legend>
+        <textarea name="instructions" placeholder="Any special instructions (optional)"></textarea>
+    </fieldset>
+
+    <!-- Confirmation -->
+    <label>
+        <input type="checkbox" name="confirm" required>
+        I confirm my order
+    </label>
+
+    <!-- Buttons -->
+    <div class="form-buttons">
+        <input type="submit" value="Submit Order">
+        <input type="reset" value="Reset Form">
+    </div>
+</form>
+
+</body>
+</html>

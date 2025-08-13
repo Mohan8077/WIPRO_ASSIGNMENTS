@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Lab — Gallery</title>
+</head>
+<body>
+
+<table width="100%" border="0" cellpadding="10" bgcolor="green">
+<tr>
+<td>
+<h1 style="color:white; margin:0;">Image Lab — Gallery</h1>
+<p style="color:white; margin:0;">Practice with &lt;img&gt;, srcset, &lt;picture&gt;, SVG, and accessibility</p>
+</td>
+</tr>
+</table>
+
+
+<table width="100%" border="0" cellpadding="10">
+<tr valign="top">
+
+<td width="60%">
+<h2>Responsive Image Gallery</h2>
+<table border="0" cellpadding="10">
+<tr>
+<td align="center">
+  <img src="rice.jpeg" alt="Basmati rice bag" width="150"><br>
+  Basmati rice —5 kg bag.
+</td>
+<td align="center">
+  <img src="snacks.jpeg" alt="Assorted Snacks Box" width="150"><br>
+  Assorted Snacks Box<br><small>(WebP served when supported)</small>
+</td>
+</tr>
+<tr>
+<td align="center">
+  <img src="truck.jpeg" alt="Delivery truck" width="150"><br>
+  Delivery truck (SVG inline with accessible title/desc)
+</td>
+<td align="center">
+  <img src="divider.png" alt="Decorative divider" width="150"><br>
+  Decorative divider (not read by screen readers)
+</td>
+</tr>
+<tr>
+<td align="center">
+  <img src="map.png" alt="Store map" width="150"><br>
+  Click a section to navigate to that aisle (image map)
+</td>
+<td></td>
+</tr>
+</table>
+</td>
+
+
+<td width="50%">
+<h2>Notes</h2>
+<p>Use <code>srcset</code> and <code>&lt;picture&gt;</code> to reduce bandwidth and serve modern formats.</p>
+<p>Add <code>loading="lazy"</code> to defer-screen images.</p>
+</td>
+</tr>
+</table>
+
+   
+    <hr>
+    <h3>Submit Lab</h3>
+    <form>
+        <input type="submit" value="Submit Lab">
+    </form>
+
+</body>
+</html>

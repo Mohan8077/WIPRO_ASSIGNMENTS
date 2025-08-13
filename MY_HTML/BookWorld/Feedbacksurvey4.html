@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Feedback Survey</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+    header {
+        background-color: #0074c7;
+        color: white;
+        padding: 15px;
+    }
+    header h1 {
+        margin: 0;
+    }
+    header p {
+        margin: 5px 0 0;
+    }
+    nav {
+        background-color: #e6f0f9;
+        padding: 8px 15px;
+    }
+    nav a {
+        margin-right: 15px;
+        color: #0074c7;
+        text-decoration: none;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    form {
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        flex: 2;
+    }
+    aside {
+        background-color: #fff8dc;
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-left: 20px;
+        flex: 1;
+        height: fit-content;
+    }
+    section {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin: 8px 0 4px;
+    }
+    input, textarea, select {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+    }
+    input[type="radio"], input[type="checkbox"] {
+        width: auto;
+    }
+    input[type="submit"], input[type="reset"] {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    input[type="submit"] {
+        background-color: #0074c7;
+        color: white;
+    }
+    input[type="reset"] {
+        background-color: white;
+        color: #0074c7;
+        border: 1px solid #0074c7;
+    }
+    footer {
+        background-color: #f4f4f4;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Website Feedback Survey</h1>
+    <p>We value your opinion. Please take a minute to share your thoughts.</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<main>
+    <form action="#" method="post">
+        
+        <section>
+            <h3>Personal Information</h3>
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="10" max="100">
+        </section>
+
+        <section>
+            <h3>Website Rating</h3>
+            <label for="design">Design (1-10):</label>
+            <input type="range" id="design" name="design" min="1" max="10">
+
+            <label>Content Quality:</label>
+            <input type="radio" name="quality" value="Excellent">Excellent
+            <input type="radio" name="quality" value="Good">Good
+            <input type="radio" name="quality" value="Average">Average
+            <input type="radio" name="quality" value="Poor">Poor
+
+            <label for="page">Most visited page:</label>
+            <select id="page" name="page">
+                <option>Home</option>
+                <option>Blog</option>
+                <option>Products</option>
+                <option>Contact</option>
+            </select>
+        </section>
+
+        <section>
+            <h3>Suggestions</h3>
+            <textarea name="suggestions" placeholder="Write your suggestions here..."></textarea>
+            <br><br>
+            <input type="checkbox" name="contact"> I agree to be contacted regarding my feedback
+        </section>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <aside>
+        <h4>Why your feedback matters</h4>
+        <p>Your feedback helps us improve our website experience for everyone. Thank you!</p>
+    </aside>
+</main>
+
+<footer>
+    © 2025 Website Survey
+</footer>
+
+</body>
+</html>
