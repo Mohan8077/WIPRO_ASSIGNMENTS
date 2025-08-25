@@ -9,6 +9,25 @@ import JuiceList from './components/JuiceList';
 import Restaurant from './components/Restaurant';
 import TempleList from './components/TempleList';
 import TailorShop from './components/TailorShop';
+
+import Fruits from './components69/Fruits';
+import TelevisionManager from './components69/TelevisionManager';
+import MarriageForm from './components69/MarriageForm';
+import AccessoriesForm from './components69/AccessoriesForm';
+import BakingItemsForm from './components69/BakingItemsForm';
+import FlightBookingForms from './components69/FlightBookingForms';
+import MovieForm from './components69/MovieForm';
+import ErrorComponent from './components6699/ErrorComponent';
+import LoadingComponent from './components6699/LoadingComponent';
+import ProductComponent from './components6699/ProductComponent';
+import MainComponent from './components6699/MainComponent';
+import FurnitureStore from './components6699/FurnitureStore';
+import FestivalApp from './components6699/FestivalApp';
+import RestaurantRegistration from './components6699/RestaurantRegistration';
+import ParentComponent from './components6699/ParentComponent';
+
+
+
 import './App.css';  // instead of './styles/App.css'
 
 
@@ -29,6 +48,23 @@ function App() {
       <Restaurant />
       <TempleList />
       <TailorShop />
+      <Fruits />
+      <TelevisionManager />
+      <MarriageForm />
+      <AccessoriesForm />
+      <BakingItemsForm />
+      <FlightBookingForms />
+      <MovieForm />
+      <ErrorComponent />
+      <LoadingComponent />
+      <ProductComponent />
+      <MainComponent />
+      <FurnitureStore />
+      <FestivalApp />
+      <RestaurantRegistration />
+      <ParentComponent />
+
+
     </div>
   );
 }
