@@ -17,6 +17,7 @@ import AccessoriesForm from './components69/AccessoriesForm';
 import BakingItemsForm from './components69/BakingItemsForm';
 import FlightBookingForms from './components69/FlightBookingForms';
 import MovieForm from './components69/MovieForm';
+
 import ErrorComponent from './components6699/ErrorComponent';
 import LoadingComponent from './components6699/LoadingComponent';
 import ProductComponent from './components6699/ProductComponent';
@@ -26,12 +27,18 @@ import FestivalApp from './components6699/FestivalApp';
 import RestaurantRegistration from './components6699/RestaurantRegistration';
 import ParentComponent from './components6699/ParentComponent';
 
+import ChessTournamentForm from './components666999/ChessTournamentForm';
+import HockeyRegistrationForm from './components666999/HockeyRegistrationForm.jsx';
+import Tailor from './components666999/Tailor.js';
+import MainPlayer from './components666999/MainPlayer.js';
+import SendAnnouncement from './components666999/SendAnnouncement';
+import AnnouncementList from './components666999/AnnouncementList';
+import IncomeTaxApp from './components666999/IncomeTaxApp';
 
+import { PowerCutProvider } from './context/PowerCutContext';
 
-import './App.css';  // instead of './styles/App.css'
-
-
-
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const groceries = ["Rice", "Wheat", "Sugar", "Milk", "Oil"];
 
@@ -63,8 +70,21 @@ function App() {
       <FestivalApp />
       <RestaurantRegistration />
       <ParentComponent />
+      <ChessTournamentForm />
+      <HockeyRegistrationForm />
+      <Tailor />
+      <MainPlayer />
 
+      {/* ✅ Power Cut Announcement System */}
+      <PowerCutProvider>
+        <div className="container mt-4">
+          <h2 className="mb-4">Street Power Cut Announcements</h2>
+          <SendAnnouncement />
+          <AnnouncementList />
+        </div>
+      </PowerCutProvider>
 
+      <IncomeTaxApp />
     </div>
   );
 }
