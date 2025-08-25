@@ -75,7 +75,7 @@ function App() {
       <Tailor />
       <MainPlayer />
 
-      {/* ✅ Power Cut Announcement System */}
+      {/* Power Cut Announcement System */}
       <PowerCutProvider>
         <div className="container mt-4">
           <h2 className="mb-4">Street Power Cut Announcements</h2>
