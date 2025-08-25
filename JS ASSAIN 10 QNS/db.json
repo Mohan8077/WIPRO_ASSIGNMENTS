@@ -1,0 +1,50 @@
+{
+  "tailoringItems": [
+    {
+      "id": "1",
+      "name": "Shirt",
+      "size": "M",
+      "price": 500
+    },
+    {
+      "id": "2",
+      "name": "Pant",
+      "size": "L",
+      "price": 700
+    },
+    {
+      "id": "3",
+      "name": "Dress",
+      "size": "S",
+      "price": 1200
+    }
+  ],
+  "players": [
+    {
+      "id": "1",
+      "name": "Lionel Messi",
+      "age": 36,
+      "position": "Forward",
+      "club": "Inter Miami",
+      "nationality": "Argentina",
+      "goals": 30,
+      "matchesPlayed": 28,
+      "jerseyNumber": 10,
+      "email": "messi@example.com",
+      "contactNumber": "9876543210"
+    },
+    {
+      "id": "87cb",
+      "name": "Mohan",
+      "age": 37,
+      "position": "Midfielder",
+      "club": "Man UD",
+      "nationality": "Indian",
+      "goals": 69,
+      "matchesPlayed": 6,
+      "jerseyNumber": 9,
+      "email": "mohannalam8077@gmail.com",
+      "contactNumber": "9182822636"
+    }
+  ]
+}
