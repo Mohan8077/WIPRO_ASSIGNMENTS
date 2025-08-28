@@ -37,6 +37,10 @@ import IncomeTaxApp from './components666999/IncomeTaxApp';
 
 import { PowerCutProvider } from './context/PowerCutContext';
 
+import JewelleryShop from './components66669999/JewelleryShop.jsx';
+import EventRegistration from './components66669999/EventRegistration.jsx';
+
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -75,7 +79,7 @@ function App() {
       <Tailor />
       <MainPlayer />
 
-      {/* Power Cut Announcement System */}
+      {/* ✅ Power Cut Announcement System */}
       <PowerCutProvider>
         <div className="container mt-4">
           <h2 className="mb-4">Street Power Cut Announcements</h2>
@@ -85,6 +89,8 @@ function App() {
       </PowerCutProvider>
 
       <IncomeTaxApp />
+      <JewelleryShop />
+      <EventRegistration />
     </div>
   );
 }
